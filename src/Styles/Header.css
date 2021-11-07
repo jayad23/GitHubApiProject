@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dongle:wght@400;700&family=Fruktur&family=Nanum+Pen+Script&family=Roboto:wght@500&family=Varela+Round&display=swap');
+
+.header-container{
+    background-color: #3E065F;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+}
+
+.header-container>img{
+    height: 3rem;
+}
+
+.header-container>h4{
+    color: #FF0075;
+    text-align: center;
+    font-size: 1rem;
+    padding-left: 0.5rem;
+    font-family: 'Fruktur', cursive;
+}
