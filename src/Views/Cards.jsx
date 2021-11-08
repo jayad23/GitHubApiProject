@@ -3,6 +3,7 @@ import ReactCardFlip from 'react-card-flip'
 import { Link } from 'react-router-dom';
 
 import '../Styles/Cards.css'
+import Repo from './Repo';
 
 const Cards = (props) => {
     const {userName, image, followers, url} = props
@@ -39,6 +40,7 @@ const Cards = (props) => {
     const handleClick = ()=>{
         setIsFlipped(!isFlipped)
     }
+
     
     return (
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
@@ -59,8 +61,8 @@ const Cards = (props) => {
                 </div>
                 <ul>
                     <Link to={`/users/${userName}/followers`}><li>Followers: {areFollowers}</li></Link>
-                    <li>Following: {isFollowing}</li>
-                    <li>Repositorios: {repo}</li>
+                    <Link to={`/users/${userName}/following`}><li>Following: {areFollowers}</li></Link>
+                    <Link to={`/users/${userName}/repos`}><li>Repositories: {repo}</li></Link>
                 </ul>
                 <button onClick={handleClick}><span>Click Back</span></button>
             </div>

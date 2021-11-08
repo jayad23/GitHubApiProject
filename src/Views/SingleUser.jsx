@@ -16,7 +16,7 @@ const SingleUser = () => {
             setSelectedUser(result)
         }
         requestApi()
-    },[])
+    },[userName])
 
     return (
         <div>
@@ -31,7 +31,7 @@ const SingleUser = () => {
                     following={selectedUser?.following_url}
                     repositories={selectedUser?.repos_url}
                     url={selectedUser?.html_url}
-            />
+                />
             }
         </div>
     )

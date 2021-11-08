@@ -1,27 +1,29 @@
 import {useParams} from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
-import FollowersCard from './FollowersCard';
-import Header from './Header';
 
-const Followers = () => {
+import Header from '../Components/Header';
+import FollowersCard from '../Components/FollowersCard';
+
+export const Following = () => {
     const {name} = useParams()
-    const [followersInfo, setFollowersInfo] = useState([])
+    const [followingData, setFollowingData] = useState([])
 
     useEffect(()=>{
         const requestApi = async ()=>{
-            const urlDir = `https://api.github.com/users/${name}/followers`
+            const urlDir = `https://api.github.com/users/${name}/following`
             const response = await fetch(urlDir)
             const result = await response.json()
-            setFollowersInfo(result)
+            setFollowingData(result)
         }
         requestApi()
     }, [name])
 
+    
     return (
         <div>
             <Header/>
             {
-                followersInfo?.map(data =>
+                followingData?.map(data =>
                     <FollowersCard
                         key={data?.id}
                         userName ={data?.login}
@@ -33,5 +35,4 @@ const Followers = () => {
     )
 }
 
-export default Followers
-
+export default Following

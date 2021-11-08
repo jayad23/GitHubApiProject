@@ -5,7 +5,7 @@ const FollowersCard = ({userName, image}) => {
     return (
         <div className="container-followers">
             <div className="image">
-                <img src={image} alt={`Image of ${userName}`} />
+                <img src={image} alt={`Avatar of ${userName}`} />
             </div>
             <div className="name">
                 <h4>{userName}</h4>
