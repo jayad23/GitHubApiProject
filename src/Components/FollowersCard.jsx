@@ -4,15 +4,10 @@ import '../Styles/FollowersCard.css'
 const FollowersCard = ({userName, image}) => {
     return (
         <div className="container-followers">
-            <div className="image">
                 <img src={image} alt={`Avatar of ${userName}`} />
-            </div>
-            <div className="name">
                 <h4>{userName}</h4>
-            </div>
-            <div className="button">
                 <Link to={`/users/${userName}`}><button>More...</button></Link>
-            </div>
+           
         </div>
     )
 }

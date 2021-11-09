@@ -2,6 +2,7 @@ import {useParams} from 'react-router-dom'
 import React, { useState, useEffect } from 'react';
 import FollowersCard from './FollowersCard';
 import Header from './Header';
+import '../Styles/FollowersCard.css'
 
 const Followers = () => {
     const {name} = useParams()
@@ -20,15 +21,18 @@ const Followers = () => {
     return (
         <div>
             <Header/>
-            {
-                followersInfo?.map(data =>
-                    <FollowersCard
-                        key={data?.id}
-                        userName ={data?.login}
-                        image={data?.avatar_url}
-                    />
-                )
-            }
+            <div className="container-cards">
+                {
+                    followersInfo?.map(data =>
+                        <FollowersCard
+                            key={data?.id}
+                            userName ={data?.login}
+                            image={data?.avatar_url}
+                        />
+                        
+                    )
+                }
+            </div>
         </div>
     )
 }

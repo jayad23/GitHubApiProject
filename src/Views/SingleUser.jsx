@@ -5,18 +5,18 @@ import Cards from './Cards'
 import Header from '../Components/Header';
 
 const SingleUser = () => {
-    const {userName} = useParams()
+    const {name} = useParams()
     const [selectedUser, setSelectedUser] = useState({})
 
     useEffect(()=>{
         const requestApi = async ()=>{
-            const urlDir = `https://api.github.com/users/${userName}`
+            const urlDir = `https://api.github.com/users/${name}`
             const response = await fetch(urlDir)
             const result = await response.json()
             setSelectedUser(result)
         }
         requestApi()
-    },[userName])
+    },[name])
 
     return (
         <div>

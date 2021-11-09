@@ -21,16 +21,18 @@ const Repo = () => {
     return (
         <div>
             <Header/>
-            {
-                reposData?.map(data =>
-                    <ReposCard
-                        key={data?.id}
-                        name = {data?.name}
-                        privateLight = {data?.private}
-                        owner = {name}
-                    />
-                )
-            }
+            <div className="container-repoCards">
+                {
+                    reposData?.map(data =>
+                        <ReposCard
+                            key={data?.id}
+                            name = {data?.name}
+                            privateLight = {data?.private}
+                            owner = {name}
+                        />
+                    )
+                }
+            </div>
         </div>
     )
 }

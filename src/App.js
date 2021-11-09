@@ -11,11 +11,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' exact element={ <Home/>}/>
+        <Route path='/*' exact element={ <Home/>}/>
+        <Route path='/users/:name' element={ <SingleUser/>}/>
         <Route path='/users/:name/repos' element={ <Repo/>}/>
         <Route path='/users/:name/following' element={ <Following/>}/>
         <Route path='/users/:name/followers' element={ <Followers/>}/>
-        <Route path='/users/:userName' element={ <SingleUser/>}/>
       </Routes>
     </BrowserRouter>
   );
