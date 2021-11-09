@@ -36,11 +36,13 @@ const Home = () => {
                     <Cards 
                         key={dataApi?.id}
                         userName={dataApi?.login}
+                        name={dataApi.name}
                         image={dataApi?.avatar_url}
-                        followers={dataApi?.followers_url}
-                        following={dataApi?.following_url}
-                        repositories={dataApi?.repos_url}
+                        followers={dataApi?.followers}
+                        following={dataApi?.following}
+                        repositories={dataApi?.public_repos}
                         url={dataApi?.html_url}
+                        bio={dataApi.bio}
                     /> 
                
             }

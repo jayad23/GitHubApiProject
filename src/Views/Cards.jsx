@@ -6,36 +6,8 @@ import '../Styles/Cards.css'
 import Repo from './Repo';
 
 const Cards = (props) => {
-    const {userName, image, followers, url} = props
-
+    const {userName, name, image, followers, following, repositories, bio, url} = props
     const [isFlipped, setIsFlipped] = useState(false)
-    const [areFollowers, setAreFollowers] = useState([])
-    const [isFollowing, setIsFollowing] = useState([])
-    const [repo, setRepo] = useState([])
-
-    useEffect(()=>{
-        const requestFollowers = async ()=>{
-            const response = await fetch(followers)
-            const result = await response.json()
-            setAreFollowers(result.length)
-        }
-        requestFollowers()
-
-        const requestFollowing = async ()=>{
-            const response = await fetch(`https://api.github.com/users/${userName}/following`)
-            const result = await response.json()
-            setIsFollowing(result.length)
-        }
-        requestFollowing()
-
-        const requestRepos = async ()=>{
-            const response = await fetch(`https://api.github.com/users/${userName}/repos`)
-            const result = await response.json()
-            setRepo(result.length)
-        }
-        requestRepos()
-
-    }, [])
 
     const handleClick = ()=>{
         setIsFlipped(!isFlipped)
@@ -47,11 +19,11 @@ const Cards = (props) => {
         
             <div className="cards-container card-front">
                 <img src={image} alt={`avatar of ${userName}`} />
-                <p>Currently studying Software Engineering and Computer Science. (S)He is an enthusiast for challenging projects.</p>
+                <p>{bio ? bio : `Hello, my name is ${name ? name : userName} and I am code lover. Welcome to my GitHub Sum-Up`}</p>
                 <a 
                     href={url}
                     target="_blank"
-                >Go to GitHub here...
+                >GitHub Profile here...
                 </a>
                 <button onClick={handleClick}><span>See More</span></button>
             </div>
@@ -60,9 +32,9 @@ const Cards = (props) => {
                     <img src={image}/>
                 </div>
                 <ul>
-                    <Link to={`/users/${userName}/followers`}><li>Followers: <br/>{areFollowers}</li></Link>
-                    <Link to={`/users/${userName}/following`}><li>Following: <br/>{areFollowers}</li></Link>
-                    <Link to={`/users/${userName}/repos`}><li>Repositories: <br/>{repo}</li></Link>
+                    <Link to={`/users/${userName}/followers`}><li>Followers: <br/>{followers}</li></Link>
+                    <Link to={`/users/${userName}/following`}><li>Following: <br/>{following}</li></Link>
+                    <Link to={`/users/${userName}/repos`}><li>Repositories: <br/>{repositories}</li></Link>
                 </ul>
                 <button onClick={handleClick}><span>Click Back</span></button>
             </div>

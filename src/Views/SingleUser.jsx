@@ -26,11 +26,13 @@ const SingleUser = () => {
                 <Cards 
                     key={selectedUser?.id}
                     userName={selectedUser?.login}
+                    name={selectedUser?.name}
                     image={selectedUser?.avatar_url}
-                    followers={selectedUser?.followers_url}
-                    following={selectedUser?.following_url}
-                    repositories={selectedUser?.repos_url}
+                    followers={selectedUser?.followers}
+                    following={selectedUser?.following}
+                    repositories={selectedUser?.public_repos}
                     url={selectedUser?.html_url}
+                    bio={selectedUser?.bio}
                 />
             }
         </div>
