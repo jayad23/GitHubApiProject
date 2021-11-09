@@ -20,11 +20,18 @@
     height: 100%;
 }
 
+.repos-container>.repoInfo>h2{
+    font-size: 1rem;
+    color: rgb(0, 139, 19);
+}
+
 .repos-container>.repoInfo>a{
     font-size: 0.9rem;
     font-style: italic;
     font-weight: bolder;
     color: rgb(61, 5, 102);
+    text-decoration: none;
+    text-align: center;
 }
 
 .repos-container>.repoInfo>.private-container{
@@ -34,7 +41,7 @@
 }
 
 
-.repos-container>.repoInfo>.private-container>.notPrivate-light{
+.repos-container>.repoInfo>.private-container>.private-light{
     background-color: rgb(216, 19, 58);
     width: 10px;
     height: 10px;
@@ -42,7 +49,7 @@
 
 }
 
-.repos-container>.repoInfo>.private-container>.private-light{
+.repos-container>.repoInfo>.private-container>.public-light{
     background-color: rgb(13, 204, 13);
     width: 10px;
     height: 10px;
@@ -51,9 +58,9 @@
 
 }
 
-.repos-container>.repoInfo>.private-container>.private-light>h1{
+.repos-container>.repoInfo>.private-container>.public-light>h1{
     visibility: hidden;
 }
-.repos-container>.repoInfo>.private-container>.notPrivate-light>h1{
+.repos-container>.repoInfo>.private-container>.private-light>h1{
     visibility: hidden;
 }

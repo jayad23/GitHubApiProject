@@ -2,8 +2,10 @@
 import '../Styles/ReposCard.css'
 
 const ReposCard = (props) => {
- 
-    const {name, link, owner, privateLight} = props
+    const {name, owner, privateLight} = props
+
+    const repoLink = `https://github.com/${owner}/${name}`
+
     return (
         <div className="repos-container">
             <div className="container-RepoImg">
@@ -16,11 +18,11 @@ const ReposCard = (props) => {
                     <div className='privateTitle'>
                         <h5>{privateLight ? 'Private:' : 'Public:'}</h5>
                     </div>
-                    <div className={privateLight ? "notPrivate-light" : "private-light"}>
+                    <div className={privateLight ? "private-light" : "public-light"}>
                         <h1>.</h1>
                     </div>
                 </div>
-                <a href={link} target="_blank">Find out more here...</a>
+                <a href={repoLink} target="_blank">More about this Repo.</a>
             </div>
         </div>
     )

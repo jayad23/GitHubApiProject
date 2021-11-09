@@ -26,7 +26,6 @@ const Repo = () => {
                     <ReposCard
                         key={data?.id}
                         name = {data?.name}
-                        link = {data?.full_name}
                         privateLight = {data?.private}
                         owner = {name}
                     />

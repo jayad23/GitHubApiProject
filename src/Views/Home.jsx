@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Header from "../Components/Header"
 import Form from "../Components/Form"
 import Cards from './Cards';
+import FrontPage from '../Components/FrontPage';
+import Searching from '../Components/Searching';
 
 const Home = () => {
     const [searchValue, setSearchValue] = useState("")
@@ -28,19 +30,19 @@ const Home = () => {
                 handlerValue = {handlerValue}
                 handlerRequestApi = {handlerRequestApi}
             />
-            {   searchValue === "" ?  <h3>Please, Input the user</h3> :
-                searchValue !== dataApi.login ? <h4>No encontrado</h4> :
-                dataApi &&
-                <Cards 
-                    key={dataApi?.id}
-                    userName={dataApi?.login}
-                    image={dataApi?.avatar_url}
-                    followers={dataApi?.followers_url}
-                    following={dataApi?.following_url}
-                    repositories={dataApi?.repos_url}
-                    url={dataApi?.html_url}
-                />
-                    
+            {   searchValue === "" ?  <FrontPage/> :
+                searchValue !== dataApi.login ? <Searching/> :
+                dataApi && 
+                    <Cards 
+                        key={dataApi?.id}
+                        userName={dataApi?.login}
+                        image={dataApi?.avatar_url}
+                        followers={dataApi?.followers_url}
+                        following={dataApi?.following_url}
+                        repositories={dataApi?.repos_url}
+                        url={dataApi?.html_url}
+                    /> 
+               
             }
         </div>
     )

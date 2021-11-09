@@ -60,9 +60,9 @@ const Cards = (props) => {
                     <img src={image}/>
                 </div>
                 <ul>
-                    <Link to={`/users/${userName}/followers`}><li>Followers: {areFollowers}</li></Link>
-                    <Link to={`/users/${userName}/following`}><li>Following: {areFollowers}</li></Link>
-                    <Link to={`/users/${userName}/repos`}><li>Repositories: {repo}</li></Link>
+                    <Link to={`/users/${userName}/followers`}><li>Followers: <br/>{areFollowers}</li></Link>
+                    <Link to={`/users/${userName}/following`}><li>Following: <br/>{areFollowers}</li></Link>
+                    <Link to={`/users/${userName}/repos`}><li>Repositories: <br/>{repo}</li></Link>
                 </ul>
                 <button onClick={handleClick}><span>Click Back</span></button>
             </div>

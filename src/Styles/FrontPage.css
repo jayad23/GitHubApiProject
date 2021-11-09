@@ -1,0 +1,40 @@
+.frontPage-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #3E065F;
+    height: 84vh;
+    margin-top: 1rem;
+    text-align: center;
+    align-items: center;
+}
+
+.frontPage-container>img{
+    width: 100px;
+    height: 100px;  
+      
+}
+
+.frontPage-container>h3{
+    font-family: 'Fruktur', cursive;
+    font-size: 3rem;
+    color: #FF0075;
+    margin: 0.5rem;
+}
+
+
+.frontPage-container>ul{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.frontPage-container>ul>li{
+    list-style: none;
+    margin: 0.6rem;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+}
+
