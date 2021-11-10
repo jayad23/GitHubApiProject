@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import Header from "../Components/Header"
 import Form from "../Components/Form"
@@ -33,17 +34,19 @@ const Home = () => {
             {   searchValue === "" ?  <FrontPage/> :
                 searchValue !== dataApi.login ? <Searching/> :
                 dataApi && 
-                    <Cards 
-                        key={dataApi?.id}
-                        userName={dataApi?.login}
-                        name={dataApi.name}
-                        image={dataApi?.avatar_url}
-                        followers={dataApi?.followers}
-                        following={dataApi?.following}
-                        repositories={dataApi?.public_repos}
-                        url={dataApi?.html_url}
-                        bio={dataApi.bio}
-                    /> 
+                    <Link to={`/users/${searchValue}`}>
+                        <Cards 
+                            key={dataApi?.id}
+                            userName={dataApi?.login}
+                            name={dataApi.name}
+                            image={dataApi?.avatar_url}
+                            followers={dataApi?.followers}
+                            following={dataApi?.following}
+                            repositories={dataApi?.public_repos}
+                            url={dataApi?.html_url}
+                            bio={dataApi.bio}
+                        /> 
+                    </Link>
                
             }
         </div>

@@ -18,7 +18,7 @@ const Cards = (props) => {
         <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
         
             <div className="cards-container card-front">
-                <img src={image} alt={`avatar of ${userName}`} />
+                <img src={image ? image : "https://freefrontend.com/assets/img/css-loaders/loading.gif"} alt={`avatar of ${userName}`} />
                 <p>{bio ? bio : `Hello, my name is ${name ? name : userName} and I am code lover. Welcome to my GitHub Sum-Up`}</p>
                 <a 
                     href={url}
@@ -29,7 +29,7 @@ const Cards = (props) => {
             </div>
             <div className="cards-container card-back">
                 <div>
-                    <img src={image}/>
+                    <img src={image ? image : "https://freefrontend.com/assets/img/css-loaders/loading.gif"}/>
                 </div>
                 <ul>
                     <Link to={`/users/${userName}/followers`}><li>Followers: <br/>{followers}</li></Link>

@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dongle:wght@400;700&family=Nanum+Pen+Script&family=Roboto:wght@500&family=Varela+Round&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dongle:wght@400;700&family=Fruktur&family=Nanum+Pen+Script&family=Roboto:wght@500&family=Varela+Round&display=swap');
 
+a{
+    text-decoration: none;
+}
+
 .cards-container{
     margin-top: 2rem;
     display: flex;
