@@ -62,10 +62,18 @@ button{
     margin-top: 0.5rem;
 }
 
+.menuNav>ul>li>i>span{
+    color: #3E065F;
+    font-weight: bolder;
+    margin-left: 0.3rem;
+    cursor: pointer;
+}
+
 .menuNav>ul>li>span{
     color: #3E065F;
     font-weight: bolder;
     margin-left: 0.3rem;
+    cursor: pointer;
 }
 
 .onlySpan{

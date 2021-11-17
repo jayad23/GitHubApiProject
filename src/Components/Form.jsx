@@ -12,7 +12,7 @@ const Form = ({handlerValue, handlerRequestApi}) => {
                     placeholder="type in..."
                 />
                 <button type="submit">
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                 </button>
             </form>
     )

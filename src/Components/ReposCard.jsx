@@ -21,7 +21,7 @@ const ReposCard = (props) => {
                         <h1>.</h1>
                     </div>
                 </div>
-                <a href={repoLink} target="_blank">More about this Repo.</a>
+                <a href={repoLink} target="_blank" rel="noreferrer">More about this Repo.</a>
             </div>
         </div>
     )
